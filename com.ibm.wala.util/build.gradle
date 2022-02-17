@@ -1,6 +1,13 @@
-apply from: "$rootDir/wala-java.gradle"
 
+plugins {
+	id 'org.checkerframework' version '0.6.8'
+}
+
+
+apply from: "$rootDir/wala-java.gradle"
 eclipse.project.natures 'org.eclipse.pde.PluginNature'
+
+apply plugin: 'org.checkerframework'
 
 dependencies {
 	testImplementation(
@@ -8,7 +15,15 @@ dependencies {
 			'org.hamcrest:hamcrest:2.2',
 	)
 	testRuntimeOnly testFixtures(project(':com.ibm.wala.core'))
+	checkerFramework 'org.checkerframework:checker:3.4.0'
 }
+
+checkerFramework {
+	checkers = [
+			'org.checkerframework.checker.resourceleak.ResourceLeakChecker'
+	]
+}
+
 
 tasks.named('javadoc') {
 	classpath += files project(':com.ibm.wala.core').tasks.named('compileJava', JavaCompile)
