@@ -162,7 +162,7 @@ public class GraphIntegrity {
     set1.removeAll(set2);
     if (set1.size() > 0) {
       Object first = set1.iterator().next();
-      msg = msg + ", first iterator contained " + first;
+      msg = msg + ", first iterator contained " + first; // incompatible type error
     } else {
       set2.removeAll(s1clone);
       if (set2.size() > 0) {

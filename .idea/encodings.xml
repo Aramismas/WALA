@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/com.ibm.wala-repository/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala-repository/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.cast.java.test.data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.cast.java.test.data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.cast.java.test.data/src/test/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jdt.test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jdt.test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jdt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jdt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jsdt.tests/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jsdt.tests/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jsdt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.jsdt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.tests/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide.tests/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide_feature/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.ibm.wala.ide_feature/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/targets/e47/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/targets/e47/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/targets/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/targets/src/main/resources" charset="UTF-8" />
+  </component>
 </project>

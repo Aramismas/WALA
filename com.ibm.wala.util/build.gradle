@@ -15,7 +15,7 @@ dependencies {
 			'org.hamcrest:hamcrest:2.2',
 	)
 	testRuntimeOnly testFixtures(project(':com.ibm.wala.core'))
-	checkerFramework 'org.checkerframework:checker:3.4.0'
+	checkerFramework 'org.checkerframework:checker:3.21.2'
 }
 
 checkerFramework {

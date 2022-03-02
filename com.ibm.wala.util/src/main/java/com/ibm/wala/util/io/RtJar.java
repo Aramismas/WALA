@@ -30,8 +30,7 @@ public class RtJar {
     return null;
   }
 
-  public static void main(String[] args) {
-    @SuppressWarnings("resource")
+  public static void main(String[] args) throws IOException {
     JarFile rt =
         getRtJar(
             new MapIterator<>(
@@ -41,13 +40,13 @@ public class RtJar {
                     t -> t.endsWith(".jar")),
                 object -> {
                   try {
-                    return new JarFile(object);
+                    return new JarFile(object); // Method closed not invoked on new JarFile. False Positive
                   } catch (IOException e) {
                     assert false : e.toString();
                     return null;
                   }
                 }));
-
+    rt.close(); // Edited TP
     System.err.println(rt.getName());
   }
 }

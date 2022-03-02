@@ -115,7 +115,7 @@ public class SemiSparseMutableIntSet implements MutableIntSet {
           for (int i = 1; i < maxCount; i++) {
             densePart.set(sparseBits.next());
           }
-          sparsePart.removeAll(densePart);
+          sparsePart.removeAll(densePart); //type error
         }
 
         assert assertDisjoint()
