@@ -30,7 +30,7 @@ public class RtJar {
     return null;
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     @SuppressWarnings("resource")
     JarFile rt =
         getRtJar(
@@ -47,7 +47,7 @@ public class RtJar {
                     return null;
                   }
                 }));
-
+    rt.close(); //added close for rt
     System.err.println(rt.getName());
   }
 }
