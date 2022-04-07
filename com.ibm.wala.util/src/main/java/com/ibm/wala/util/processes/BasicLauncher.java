@@ -64,6 +64,12 @@ public class BasicLauncher extends Launcher {
       Drainer d = (Drainer) d2;
       setStdOut(d.getCapture().toByteArray());
     }
+    if (p.getInputStream() != null) {
+      p.getInputStream().close();
+    }
+    if (p.getErrorStream() != null) {
+      p.getErrorStream().close();
+    }
     return p.exitValue();
   }
 }
