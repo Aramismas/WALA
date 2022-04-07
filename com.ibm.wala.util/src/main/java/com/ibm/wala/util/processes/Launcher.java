@@ -139,66 +139,63 @@ public abstract class Launcher {
     result.start();
     return result;
   }
-// Edited TP
-  protected Drainer captureStdOut(Process p) throws IOException {
-    try (final BufferedInputStream out = new BufferedInputStream(p.getInputStream(), BUFFER_SIZE)) {
-      final ByteArrayOutputStream b = new ByteArrayOutputStream(BUFFER_SIZE);
-      Drainer result =
-          new Drainer(p) {
-            @Override
-            void drain() throws IOException {
-              drainAndCatch(out, b);
-            }
 
-            @Override
-            void blockingDrain() throws IOException {
-              blockingDrainAndCatch(out, b);
-            }
-          };
-      result.setCapture(b);
-      result.start();
-      return result;
-    }
+  protected Drainer captureStdOut(Process p) {
+    final BufferedInputStream out = new BufferedInputStream(p.getInputStream(), BUFFER_SIZE);
+    final ByteArrayOutputStream b = new ByteArrayOutputStream(BUFFER_SIZE);
+    Drainer result =
+        new Drainer(p) {
+          @Override
+          void drain() throws IOException {
+            drainAndCatch(out, b);
+          }
+
+          @Override
+          void blockingDrain() throws IOException {
+            blockingDrainAndCatch(out, b);
+          }
+        };
+    result.setCapture(b);
+    result.start();
+    return result;
   }
-  // Edited TP
-  protected Thread drainStdErr(Process p) throws IOException {
-    try (final BufferedInputStream err = new BufferedInputStream(p.getErrorStream(), BUFFER_SIZE)) {
-      Thread result =
-          new Drainer(p) {
-            @Override
-            void drain() throws IOException {
-              drainAndPrint(err, System.err);
-            }
 
-            @Override
-            void blockingDrain() throws IOException {
-              blockingDrainAndPrint(err, System.err);
-            }
-          };
-      result.start();
-      return result;
-    }
+  protected Thread drainStdErr(Process p) {
+    final BufferedInputStream err = new BufferedInputStream(p.getErrorStream(), BUFFER_SIZE);
+    Thread result =
+        new Drainer(p) {
+          @Override
+          void drain() throws IOException {
+            drainAndPrint(err, System.err);
+          }
+
+          @Override
+          void blockingDrain() throws IOException {
+            blockingDrainAndPrint(err, System.err);
+          }
+        };
+    result.start();
+    return result;
   }
-// Edited TP
-  protected Drainer captureStdErr(Process p) throws IOException {
-    try (final BufferedInputStream out = new BufferedInputStream(p.getErrorStream(), BUFFER_SIZE)) {
-      final ByteArrayOutputStream b = new ByteArrayOutputStream(BUFFER_SIZE);
-      Drainer result =
-          new Drainer(p) {
-            @Override
-            void drain() throws IOException {
-              drainAndCatch(out, b);
-            }
 
-            @Override
-            void blockingDrain() throws IOException {
-              blockingDrainAndCatch(out, b);
-            }
-          };
-      result.setCapture(b);
-      result.start();
-      return result;
-      }
+  protected Drainer captureStdErr(Process p) {
+    final BufferedInputStream out = new BufferedInputStream(p.getErrorStream(), BUFFER_SIZE);
+    final ByteArrayOutputStream b = new ByteArrayOutputStream(BUFFER_SIZE);
+    Drainer result =
+        new Drainer(p) {
+          @Override
+          void drain() throws IOException {
+            drainAndCatch(out, b);
+          }
+
+          @Override
+          void blockingDrain() throws IOException {
+            blockingDrainAndCatch(out, b);
+          }
+        };
+    result.setCapture(b);
+    result.start();
+    return result;
   }
 
   /** A thread that runs in a loop, performing the drain() action until a process terminates */
